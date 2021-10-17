@@ -1,0 +1,60 @@
+.success-icon{
+    fill: none;
+    stroke: $color-green;
+    width: 7rem;
+    height:7rem;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+//     &:hover{
+//         stroke-dasharray: 230;
+//         stroke-dashoffset: 230;
+//         animation: stroke-dashoffset .6s linear forwards , success-scale .2s ease .6s;
+// }
+
+.list-icon{
+    fill: none;
+    stroke: $color-green;
+    width: 7rem;
+    height:7rem;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+.world-icon{
+    fill: none;
+    stroke: $color-green;
+    width: 7rem;
+    height:7rem;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+
+
+
+
+
+// .world-icon{
+//     fill: none;
+//     stroke: $color-green;
+//     width: 7rem;
+//     height:7rem;
+//     stroke-linecap: round;
+//     stroke-linejoin: round;
+//     stroke-width: 2;
+//     &:hover{
+//         .world-icon__world-map{
+//             stroke-dasharray:150 ;
+//             stroke-dashoffset:150 ;
+//         }
+//         .word-icon__world-marker{
+//             stroke-dasharray:80 ;
+//             stroke-dashoffset:80 ;
+//         }
+//         .world-icon__world-map .word-icon__world-marker{
+//             animation: stroke-dashoffset .6s linear forwards ;
+//         }
+//     }
+// }

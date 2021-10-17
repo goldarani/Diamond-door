@@ -1,0 +1,136 @@
+.search {
+    $parent: &;
+    position: relative;
+    border: 0.3rem solid $color-blue-search;
+    @include box(5);
+        @include flex(center , center);
+    border-radius: 5rem;
+    transition: width 1s $cubic-bezier;
+    &__form {
+        @include flex(center , center);
+        @include box(4);
+        border: 0.1rem solid $color-blue-search;
+        border-radius: 50%;
+        margin-right: auto;
+        margin-left: 0.2rem;
+        transition: width 1s $cubic-bezier;
+    }
+    &__input {
+        position: absolute;
+        display: none;
+        width: calc(100% - 5rem);
+        height: 80%;
+        outline: 0;
+        border: 0;
+        background-color: transparent;
+        right: 0.2rem;
+        &::placeholder {
+            color: $color-gray;
+        }
+    }
+    &__btn {
+        background: transparent;
+        position: relative;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+    }
+    &__circle {
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        top: 0;
+        left: 0;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0.2rem;
+            left: 0.2rem;
+            width: 1.8rem;
+            height: 0.9rem;
+            border: 0.5rem solid #457b9d;
+            border-top-right-radius: 1rem;
+            border-top-left-radius: 1rem;
+            border-bottom: 0;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 1.1rem;
+            left: 0.2rem;
+            width: 1.8rem;
+            height: 0.9rem;
+            border: 0.5rem solid #457b9d;
+            border-bottom-right-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+            border-top: 0;
+        }
+    }
+    &__stand {
+        position: absolute;
+        top: 2rem;
+        left: 1.5rem;
+        width: 1.5rem;
+        height: 0.6rem;
+        background-color: transparent;
+        transform: rotate(45deg);
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0.3rem;
+            width: 1.5rem;
+            height: 0.6rem;
+            background-color: $color-blue-search;
+            border-radius: 1rem;
+        }
+    }
+
+    &:focus-within {
+        width: 20rem;
+        @media only screen and (max-width: 992px) {
+            width: 12rem;
+        }
+
+        #{$parent}__input {
+            display: block;
+        }
+        .search__circle {
+            top: 0.4rem;
+            left: -0.3rem;
+            &::before,
+            &::after {
+                border-radius: 1rem;
+                background-color: $color-blue-search;
+                width: 1.5rem;
+                height: 0.6rem;
+            }
+            &::before {
+                transition: all 0.5s;
+                transform: rotate(-45deg);
+                top: 0.4rem;
+            }
+            &::after {
+                transition: all 0.5s;
+                transform: rotate(45deg);
+            }
+        }
+        .search__stand {
+            top: 1.5rem;
+            transform: rotate(0);
+            &::after {
+                transform: rotate(45deg);
+                transition: all 0.5s;
+            }
+            &::before {
+                transition: all 0.5s;
+                top: -0.7rem;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.navbar {
+    @media only screen and (max-width: 768px) {
+        position: sticky;
+        background-color: $color-whith-2;
+        top: 0;
+        z-index: 30;
+        box-shadow: 0 0 7px 3px $color-gray-light;
+    }
+    &__search-box {
+        width: 20rem;
+        @media only screen and (max-width: 992px) {
+            width: auto;
+            order: 1;
+        }
+    }
+    &__nav {
+        flex-grow: 1;
+        @media only screen and (max-width: 992px) {
+            flex-grow: 0;
+        }
+    }
+    &__logo {
+        @media only screen and (max-width: 992px) {
+            order: 2;
+        }
+    }
+}
